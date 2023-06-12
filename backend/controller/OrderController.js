@@ -42,14 +42,12 @@ exports.getSingleOrder = catchAsyncError(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-
+         singleOrder
     })
 })
 exports.MyOrders = catchAsyncError(async (req, res, next) => {
-    const Orders = await Order.findById({ user: req.user._id });
-    if (!singleOrder) {
-        return next(new errorHandeler("product not found with this id", 404))
-    }
+    const Orders = await Order.find({ user: req.user.id });
+
 
     res.status(200).json({
         success: true,
@@ -96,7 +94,7 @@ exports.updateOrder = catchAsyncError(async (req, res, next) => {
         order.deliveredAt = Date.now();
     }
 
-    order.orderStatus = req.body.status
+    order.orderStatus = req.body.orderStatus
     await order.save();
 
     res.status(200).json({
