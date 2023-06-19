@@ -1,0 +1,40 @@
+.productDetails{
+    width: 100vw;
+}
+.details{
+    display: flex;
+    
+}
+.details > div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.details >div:last-child{
+    align-items: start;
+}
+.border-bottom{
+    border-bottom: 2px solid rgb(238, 212, 212);
+    width: 100%;
+}
+.button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: .5vmax;
+    cursor: pointer;
+    color: white;
+    transition: all 0.5s;
+  }
+  .reviewInput{
+    width: 30vw;
+    display: block;
+    border: .5px solid black;
+    
+  }
+  .loginInput{
+     border: 1px solid rgb(168, 139, 139);
+     
+  }
+
